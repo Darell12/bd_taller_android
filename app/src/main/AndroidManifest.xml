@@ -13,16 +13,24 @@
         android:theme="@style/Theme.Agenda"
         tools:targetApi="31">
         <activity
-            android:name=".NewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ListarContactosActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Agenda">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".NewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
         </activity>
     </application>
 

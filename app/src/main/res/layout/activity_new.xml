@@ -74,6 +74,12 @@
                 android:text="Guardar" android:backgroundTint="#a541f8"
                 android:id="@+id/btnguardar"/>
 
+                <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Listar" android:backgroundTint="#a541f8"
+                android:id="@+id/btnListar"/>
+
 
             </LinearLayout>
 

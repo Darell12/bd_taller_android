@@ -2,6 +2,7 @@ package com.example.agenda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,7 @@ public class NewActivity extends AppCompatActivity {
 
     Button btnGuardar;
 
+    Button btnListar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,9 @@ public class NewActivity extends AppCompatActivity {
         txtCorreo = findViewById(R.id.txtcorreo);
 
         btnGuardar = findViewById(R.id.btnguardar);
+        btnListar = findViewById(R.id.btnListar);
 
+        Intent listar = new Intent(this, ListarContactosActivity.class);
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +45,15 @@ public class NewActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnListar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(listar);
+            }
+        });
+
+
 
     }
 
