@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.agenda.db.DbContactos;
 
-public class NewActivity extends AppCompatActivity {
+public class NewActivity extends AppCompatActivity  {
     EditText txtNombre;
     EditText txtTelefono;
     EditText txtCorreo;

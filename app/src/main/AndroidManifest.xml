@@ -16,21 +16,27 @@
             android:name=".ListarContactosActivity"
             android:exported="true"
             android:theme="@style/Theme.Agenda">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
-
         <activity
             android:name=".NewActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".VerActivity"
+            android:exported="false"
+            android:parentActivityName=".NewActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NewActivity" />
         </activity>
     </application>
 

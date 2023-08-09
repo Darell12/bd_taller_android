@@ -1,19 +1,24 @@
 package com.example.agenda.adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.agenda.R;
+import com.example.agenda.VerActivity;
 import com.example.agenda.models.Contacto;
 import java.util.List;
 
 public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.ContactoViewHolder> {
 
-    private List<Contacto> contactos;
+    private static List<Contacto> contactos;
 
     public ContactoAdapter(List<Contacto> contactos) {
         this.contactos = contactos;
@@ -48,6 +53,16 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
             textNombre = itemView.findViewById(R.id.text_nombre);
             textTelefono = itemView.findViewById(R.id.text_telefono);
             textCorreo = itemView.findViewById(R.id.text_correo);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context context = itemView.findViewById(R.id.text_nombre).getContext();
+                    Intent intent = new Intent(context, VerActivity.class);
+                    intent.putExtra("ID", contactos.get(getAdapterPosition()).getId());
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }
